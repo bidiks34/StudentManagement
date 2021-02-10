@@ -372,7 +372,7 @@ void Modify(string studentArr[])
 	}
 }
 
-//This function using for removing element of the text and update it.
+//This function using for removing element from the text and update it.
 void RemoveElement(string studentArr[])
 {
 	system("cls");
