@@ -181,7 +181,7 @@ void SortArray(string tempArr[])
 	//This for loop makes it sorted.
 	for(int i = 0; i < SIZE - 1; i++ )
 	{
-		//When the value is empty in index, it will be changed its place with not empty element until the finding empty element. 
+		//When the value is empty in index, it will be changed its place with not empty element until finding the empty element. 
 		if(tempArr[i+1] != "")
 		{
 			temp = tempArr[i];
