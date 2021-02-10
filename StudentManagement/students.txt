@@ -1,5 +1,5 @@
 Name: Tahir Surname: Emmi ID: 1225 Status: 1
 Name: Melih Surname: Erzakli ID: 1717 Status: 1
 Name: Ersin Surname: Korkut ID: 1907 Status: 1
-Name: Emziren Surname: Kopek ID: 1058 Status: 1
+Name: Sadullah Surname: Ersin ID: 1058 Status: 1
 Name: Berke Surname: Ersoy ID: 1366 Status: 1
