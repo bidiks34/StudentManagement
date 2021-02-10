@@ -342,8 +342,8 @@ void Modify(string studentArr[])
 	else
 	{
 		
-		int lastElement = studentArr[choice].size() - 1;//Last element is status of the element.
-		string tempWord = studentArr[choice]; // Temporary variable to b.
+		int lastElement = studentArr[choice].size() - 1;//Last element that is status of the element.
+		string tempWord = studentArr[choice]; // Temporary string variable.
 
 		system("cls");
 		
