@@ -330,7 +330,7 @@ void Modify(string studentArr[])
 	cin >> choice;
 	if (choice == emptyIndex)
 	{
-		while (choice != emptyIndex)
+		while (choice == emptyIndex)
 		{
 			system("cls");
 			WriteArray(studentArr);
@@ -387,7 +387,7 @@ void RemoveElement(string studentArr[])
 	cin >> choice;
 	if(choice == emptyIndex)
 	{
-		while(choice != emptyIndex)
+		while(choice == emptyIndex)
 		{
 			cout << "Please enter a number which is in the list!!!" << endl;
 			cout << "---> ";
