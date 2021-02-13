@@ -181,7 +181,7 @@ void SortArray(string tempArr[])
 	//This for loop makes it sorted.
 	for(int i = 0; i < SIZE - 1; i++ )
 	{
-		//When the value is empty in index, it will be changed its place with not empty element until finding the empty element. 
+		//When the value is empty in index, it will be changed its place with not empty element until the finding empty element. 
 		if(tempArr[i+1] != "")
 		{
 			temp = tempArr[i];
@@ -328,51 +328,47 @@ void Modify(string studentArr[])
 	cout << "Which student would you like to change its status." << endl;
 	cout << "-----> ";
 	cin >> choice;
-	if (choice == emptyIndex)
+
+	//if the choice is selected from out of the list, the while block try to get number which is in the list until choice's match at list.
+	while(choice >= emptyIndex)
 	{
-		while (choice == emptyIndex)
-		{
-			system("cls");
-			WriteArray(studentArr);
-			cout << "Please enter a number which is in the list!!!" << endl;
-			cout << "---> ";
-			cin >> choice;
-		}
+		system("cls");
+		ShowArray(studentArr, SIZE);
+		cout << "Please enter a number which is in the list!!!" << endl;
+		cout << "---> ";
+		cin >> choice;
+	}
+
+	int lastElement = studentArr[choice].size() - 1;//Last element is status of the element.
+	string tempWord = studentArr[choice]; // Temporary variable to b.
+
+	system("cls");
+
+	if (tempWord[lastElement] == '1')
+	{
+		cout << studentArr[choice] << endl;
+		cout << "That student's status is being changed from 1 to 0";
+		tempWord.replace(lastElement, 1, "0");
 	}
 	else
 	{
-		
-		int lastElement = studentArr[choice].size() - 1;//Last element that is status of the element.
-		string tempWord = studentArr[choice]; // Temporary string variable.
-
-		system("cls");
-		
-		if(tempWord[lastElement] == '1')
-		{
-			cout << studentArr[choice] << endl;
-			cout << "That student's status is being changed from 1 to 0";
-			tempWord.replace(lastElement, 1, "0");
-		}
-		else
-		{
-			cout << studentArr[choice] << endl;
-			cout << "That student's status is being changed from 0 to 1" << endl;
-			tempWord.replace(lastElement, 1, "1");
-		}
-		studentArr[choice] = tempWord;
-
-		cout << "\nWould you like to continue? <1,0> ";
-		cin >> selection;
-
-		isRun(selection);
-
-
-
-		WriteFile(studentArr);
+		cout << studentArr[choice] << endl;
+		cout << "That student's status is being changed from 0 to 1" << endl;
+		tempWord.replace(lastElement, 1, "1");
 	}
+	studentArr[choice] = tempWord;
+
+	cout << "\nWould you like to continue? <1,0> ";
+	cin >> selection;
+
+	isRun(selection);
+
+
+
+	WriteFile(studentArr);
 }
 
-//This function using for removing element from the text and update it.
+//This function using for removing element of the text and update it.
 void RemoveElement(string studentArr[])
 {
 	system("cls");
@@ -385,21 +381,18 @@ void RemoveElement(string studentArr[])
 	ShowArray(studentArr, SIZE);
 	cout << "Which student would you like to remove : ";
 	cin >> choice;
-	if(choice == emptyIndex)
+	while (choice >= emptyIndex)
 	{
-		while(choice == emptyIndex)
-		{
-			cout << "Please enter a number which is in the list!!!" << endl;
-			cout << "---> ";
-			cin >> choice;
-		}
+		system("cls");
+		ShowArray(studentArr, SIZE);
+		cout << "Please enter a number which is in the list!!!" << endl;
+		cout << "---> ";
+		cin >> choice;
 	}
-	else
-	{
-		cout << "That student has been deleted in the system... ---> " << studentArr[choice]<< endl;
-		studentArr[choice] = "";
+
+	cout << "That student has been deleted in the system... ---> " << studentArr[choice]<< endl;
+	studentArr[choice] = "";
 		
-	}
 
 	SortArray(studentArr);
 
